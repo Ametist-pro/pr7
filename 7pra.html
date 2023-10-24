@@ -1,0 +1,101 @@
+<script>
+
+class People{
+  constructor(options) {
+    this.name = options.name
+    this.age = options.age 
+  }
+}
+class Car {
+  constructor(options) {
+    this.make = options.make
+    this.yearv = options.yearv
+  }
+}
+class Book {
+  constructor(options) {
+    this.title = options.title
+    this.year = options.year
+  }
+}
+class Factory {
+  createObject(options) {
+    if(options.Type === 'Человек') {
+      return new People(options);
+    } 
+    else if(options.Type === 'Машина') {
+      return new Car(options);
+      }
+      else if(options.Type === 'Книга') {
+      return new Book(options);
+      }
+  }
+}
+const factory = new Factory();
+const people1 = factory.createObject({
+  Type: 'Человек',
+  name: "Ярослав",
+  age: 18
+});
+const people2= factory.createObject({
+  Type: 'Человек',
+  name: "Иван",
+  age: 11
+});
+const people3= factory.createObject({
+  Type: 'Человек',
+  name: "Олег",
+  age: 32
+});
+const car1= factory.createObject({
+  Type: 'Машина',
+  make: "Mercedes",
+  yearv: 2020
+});
+const car2= factory.createObject({
+  Type: 'Машина',
+  make: "BMW",
+  yearv: 2018
+});
+const car3= factory.createObject({
+  Type: 'Машина',
+  make: "Lexus",
+  yearv: 2022
+});
+const book1= factory.createObject({
+  Type: 'Книга',
+  title: "Война и мир",
+  year: 1863
+});
+const book2= factory.createObject({
+  Type: 'Книга',
+  title: "Мертвые души",
+  year: 1835
+});
+const book3= factory.createObject({
+  Type: 'Книга',
+  title: "Отцы и дети",
+  year: 1860
+});
+
+var mass_people = [people1,people2,people3];
+var mass_car = [car1,car2,car3];
+var mass_book = [book1,book2,book3];
+
+document.writeln("Имя: " , people1.name, ", Возраст: ", people1.age ,"<br>");
+document.writeln("Имя: " , people2.name, ", Возраст: ", people2.age ,"<br>");
+document.writeln("Имя: " , people3.name, ", Возраст: ", people3.age ,"<br>");
+
+document.writeln("Марка автомобиля: " , car1.make, ", Год выпуска: ", car1.yearv ,"<br>");
+document.writeln("Марка автомобиля: " , car2.make, ", Год выпуска: ", car2.yearv ,"<br>");
+document.writeln("Марка автомобиля: " , car3.make, ", Год выпуска: ", car3.yearv ,"<br>");
+
+document.writeln("Название книги: " , book1.title, ", Год публикации: ", book1.year ,"<br>");
+document.writeln("Название книги: " , book2.title, ", Год публикации: ", book2.year ,"<br>");
+document.writeln("Название книги: " , book3.title, ", Год публикации: ", book3.year);
+
+console.log(mass_people);
+console.log(mass_car);
+console.log(mass_book);
+
+</script>
